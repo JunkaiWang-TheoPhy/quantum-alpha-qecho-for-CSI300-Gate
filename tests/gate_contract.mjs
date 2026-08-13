@@ -8,13 +8,18 @@ for (const identity of ["Quantum Alpha", "张鸿飞", "吴哲楠", "方一策", 
 assert.equal((html.match(/指导老师/g) || []).length, 1, "advisor credit must appear exactly once");
 assert.equal((html.match(/罗迪/g) || []).length, 1, "advisor name must appear exactly once");
 assert.ok(html.includes('class="advisor-note"'), "advisor credit needs its own framed label");
-assert.doesNotMatch(html, /旧版网页|evidence\/report\.html|evidence-first-landing|清华大学物理系|Q-ECHO|Advisor|ADVISOR|4\s*\+\s*1|4 位参与者|4位参与者|portrait-luo-di/);
+assert.equal((html.match(/Q-ECHO-V/g) || []).length, 1, "Q-ECHO-V may appear only in the supplied document title");
+assert.doesNotMatch(html, /旧版网页|evidence\/report\.html|evidence-first-landing|清华大学物理系|Advisor|ADVISOR|4\s*\+\s*1|4 位参与者|4位参与者|portrait-luo-di/);
 assert.doesNotMatch(html, /三个按钮分别使用不同的原创量子芯片图/);
 assert.ok(html.includes('href="https://github.com/JunkaiWang-TheoPhy/quantum-alpha-qecho-for-CSI300"'), "GitHub button must target the engineering repository");
 for (const folder of ["ppt", "video", "demo"]) {
   assert.ok(html.includes(`/tree/main/${folder}`), `missing ${folder} folder`);
 }
-assert.equal((html.match(/data-material=/g) || []).length, 3);
+assert.equal((html.match(/data-material=/g) || []).length, 4);
+assert.ok(html.includes('data-material="feishu-document"'), "missing Feishu document card");
+assert.ok(html.includes('href="https://saoi3t9hyeh.feishu.cn/docx/U8NdduzHXoYHPqxqY03cZoZvnve"'), "Feishu document card must target the supplied document");
+assert.ok(html.includes('target="_blank" rel="noopener noreferrer"'), "external document must open safely in a new tab");
+assert.ok(html.includes("丰富设计版") && html.includes("Quantum Alpha｜Q-ECHO-V"), "missing rich document copy");
 assert.ok(html.includes('class="portrait-gallery"'), "missing portrait gallery");
 assert.equal((html.match(/class="portrait-card/g) || []).length, 4, "gallery must contain four participant cards");
 for (const asset of ["distant-mountains.jpg", "wanderer-snow-mountains.png", "chip-gold.png", "chip-silver.png", "chip-violet.png"]) {
