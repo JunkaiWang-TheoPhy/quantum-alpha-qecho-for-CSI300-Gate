@@ -19,7 +19,9 @@ assert.ok(html.includes('data-palette="ochre-yellow"'), "advisor needs the ochre
 for (const asset of ["distant-mountains.jpg", "wanderer-snow-mountains.png", "chip-gold.png", "chip-silver.png", "chip-violet.png"]) {
   assert.ok(existsSync(new URL(`../assets/${asset}`, import.meta.url)), `missing ${asset}`);
 }
-for (const portrait of ["zhang-hongfei", "wu-zhenan", "fang-yice", "wang-junkai", "luo-di"]) {
+for (const portrait of ["zhang-hongfei", "wu-zhenan", "fang-yice", "wang-junkai"]) {
   assert.ok(existsSync(new URL(`../assets/portrait-${portrait}-v2.png`, import.meta.url)), `missing portrait ${portrait}`);
 }
+assert.ok(existsSync(new URL("../assets/portrait-luo-di-v3.png", import.meta.url)), "missing identity-referenced advisor portrait");
+assert.ok(html.includes("portrait-luo-di-v3.png"), "advisor must use the identity-referenced portrait");
 console.log("Quantum Alpha Gate contract: pass");
