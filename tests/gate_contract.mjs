@@ -19,10 +19,11 @@ assert.equal((html.match(/data-material=/g) || []).length, 4);
 assert.ok(html.includes('data-material="feishu-document"'), "missing Feishu document card");
 assert.ok(html.includes('href="https://saoi3t9hyeh.feishu.cn/docx/U8NdduzHXoYHPqxqY03cZoZvnve"'), "Feishu document card must target the supplied document");
 assert.ok(html.includes('target="_blank" rel="noopener noreferrer"'), "external document must open safely in a new tab");
-assert.ok(html.includes("丰富设计版") && html.includes("Quantum Alpha｜Q-ECHO-V"), "missing rich document copy");
+assert.ok(html.includes("一览·飞书文档") && html.includes("Quantum Alpha｜Q-ECHO-V"), "missing document overview copy");
+assert.ok(html.includes("assets/feishu-document-panorama.png"), "document card must use its dedicated panoramic background");
 assert.ok(html.includes('class="portrait-gallery"'), "missing portrait gallery");
 assert.equal((html.match(/class="portrait-card/g) || []).length, 4, "gallery must contain four participant cards");
-for (const asset of ["distant-mountains.jpg", "wanderer-snow-mountains.png", "chip-gold.png", "chip-silver.png", "chip-violet.png"]) {
+for (const asset of ["distant-mountains.jpg", "wanderer-snow-mountains.png", "feishu-document-panorama.png", "chip-gold.png", "chip-silver.png", "chip-violet.png"]) {
   assert.ok(existsSync(new URL(`../assets/${asset}`, import.meta.url)), `missing ${asset}`);
 }
 for (const portrait of ["zhang-hongfei", "wu-zhenan", "fang-yice", "wang-junkai"]) {
