@@ -2,10 +2,13 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
-for (const identity of ["Quantum Alpha", "张鸿飞", "吴哲楠", "方一策", "王俊凯", "参与者"]) {
+for (const identity of ["Quantum Alpha", "张鸿飞", "吴哲楠", "方一策", "王俊凯", "参与者", "指导老师 · 罗迪"]) {
   assert.ok(html.includes(identity), `missing identity ${identity}`);
 }
-assert.doesNotMatch(html, /旧版网页|evidence\/report\.html|evidence-first-landing|清华大学物理系|Q-ECHO|罗迪|指导老师|Advisor|ADVISOR|4\s*\+\s*1|4 位参与者|4位参与者|portrait-luo-di/);
+assert.equal((html.match(/指导老师/g) || []).length, 1, "advisor credit must appear exactly once");
+assert.equal((html.match(/罗迪/g) || []).length, 1, "advisor name must appear exactly once");
+assert.ok(html.includes('class="advisor-note"'), "advisor credit needs its own framed label");
+assert.doesNotMatch(html, /旧版网页|evidence\/report\.html|evidence-first-landing|清华大学物理系|Q-ECHO|Advisor|ADVISOR|4\s*\+\s*1|4 位参与者|4位参与者|portrait-luo-di/);
 assert.doesNotMatch(html, /三个按钮分别使用不同的原创量子芯片图/);
 assert.ok(html.includes('href="https://github.com/JunkaiWang-TheoPhy/quantum-alpha-qecho-for-CSI300"'), "GitHub button must target the engineering repository");
 for (const folder of ["ppt", "video", "demo"]) {
