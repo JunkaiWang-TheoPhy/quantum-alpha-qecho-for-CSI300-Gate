@@ -12,10 +12,14 @@ for (const folder of ["ppt", "video", "demo"]) {
   assert.ok(html.includes(`/tree/main/${folder}`), `missing ${folder} folder`);
 }
 assert.equal((html.match(/data-material=/g) || []).length, 3);
+assert.ok(html.includes('class="portrait-gallery"'), "missing portrait gallery");
+assert.equal((html.match(/class="portrait-card/g) || []).length, 5, "gallery must contain five portrait cards");
+assert.ok(html.includes('class="portrait-card advisor-card"'), "advisor needs a distinct card");
+assert.ok(html.includes('data-palette="ochre-yellow"'), "advisor needs the ochre-yellow theme hook");
 for (const asset of ["distant-mountains.jpg", "wanderer-snow-mountains.png", "chip-gold.png", "chip-silver.png", "chip-violet.png"]) {
   assert.ok(existsSync(new URL(`../assets/${asset}`, import.meta.url)), `missing ${asset}`);
 }
-for (const avatar of ["zhang-hongfei", "wu-zhenan", "fang-yice", "wang-junkai", "luo-di"]) {
-  assert.ok(existsSync(new URL(`../assets/avatar-${avatar}.png`, import.meta.url)), `missing avatar ${avatar}`);
+for (const portrait of ["zhang-hongfei", "wu-zhenan", "fang-yice", "wang-junkai", "luo-di"]) {
+  assert.ok(existsSync(new URL(`../assets/portrait-${portrait}-v2.png`, import.meta.url)), `missing portrait ${portrait}`);
 }
 console.log("Quantum Alpha Gate contract: pass");

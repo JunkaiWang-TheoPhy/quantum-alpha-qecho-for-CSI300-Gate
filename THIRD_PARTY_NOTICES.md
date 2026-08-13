@@ -1,11 +1,6 @@
 # Third-party notices
 
-The five illustrated profile avatars were generated through the DiceBear HTTP
-API using the Avataaars style by Pablo Stanley. Avataaars is free for personal
-and commercial use. DiceBear's API and license overview are available at:
-
-- https://www.dicebear.com/how-to-use/http-api/
-- https://www.dicebear.com/licenses/
-
-The avatars are illustrative placeholders and are not photographic likenesses
-of the named people.
+The five hand-painted editorial portraits were generated specifically for this
+project with an AI image-generation tool. They are illustrative placeholders
+used to establish a consistent visual language and are not photographic
+likenesses of the named people.
