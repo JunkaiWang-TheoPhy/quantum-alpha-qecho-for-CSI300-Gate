@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+assert.ok(html.includes('越过金融噪声，<br>看见<span class="accent">量子几何</span>。'), "missing approved hero title");
+assert.doesNotMatch(html, /越过噪声，|量子路径/);
 for (const identity of ["Quantum Alpha", "张鸿飞", "吴哲楠", "方一策", "王俊凯", "参与者", "指导老师 · 罗迪"]) {
   assert.ok(html.includes(identity), `missing identity ${identity}`);
 }
