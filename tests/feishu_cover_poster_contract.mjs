@@ -12,6 +12,9 @@ for (const content of [
   "单个最新时间步真机测量",
   "[H<sub>a</sub>,H<sub>b</sub>]≠0",
   "mixed-state SLD-QFI",
+  "Q-ECHO-V｜量子回声",
+  "相较最强经典锚点",
+  "相较注册量子基线",
 ]) {
   assert.ok(html.includes(content), `missing migrated poster content: ${content}`);
 }
@@ -19,9 +22,12 @@ assert.ok(html.includes("width:800px;height:2000px"), "screen canvas must be 800
 assert.ok(html.includes("size:800mm 2000mm"), "print page must be 800 × 2000 mm");
 assert.equal((html.match(/class="author"/g) || []).length, 5, "poster must contain five authors");
 assert.doesNotMatch(html, /Q-SWITCH|可信路由|经典安全专家|Commuting|0\.53%|7\/9|0\.8327/);
+assert.doesNotMatch(html, /3 folds|3 seeds|QLSTM/);
 assert.doesNotMatch(html, /font-size:(?:6|7|8|9|10|11)(?:\.\d+)?px/, "poster contains undersized text");
 assert.ok(existsSync(new URL("../assets/feishu-cover-market-memory.webp", import.meta.url)), "unique hero asset missing");
 assert.ok(existsSync(new URL("../assets/feishu-cover-live-qr.png", import.meta.url)), "live poster QR missing");
+assert.ok(existsSync(new URL("../assets/wanderer-snow-mountains.png", import.meta.url)), "mountain background missing");
+assert.ok(html.includes("assets/wanderer-snow-mountains.png"), "mountain background must be used");
 for (const figure of ["01-market-path.png", "02-system-journey.png", "04-geometry-memory.png", "hardware-status.png"]) {
   assert.ok(existsSync(new URL(`../assets/feishu-poster/${figure}`, import.meta.url)), `missing Feishu figure: ${figure}`);
   assert.ok(html.includes(`assets/feishu-poster/${figure}`), `unused Feishu figure: ${figure}`);
