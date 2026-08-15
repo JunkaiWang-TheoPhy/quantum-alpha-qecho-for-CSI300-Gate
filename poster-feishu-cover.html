@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Quantum Alpha · 飞书文档封面式决赛海报">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%236951bd'/%3E%3Cpath d='M8 21l7-12 3 6 2-3 5 9z' fill='%23f5efe1'/%3E%3C/svg%3E">
+  <title>Quantum Alpha · The Market Remembers</title>
+  <style>
+    :root{--ink:#17202a;--muted:#716a66;--paper:#f5efe1;--paper2:#fbf8f0;--gold:#d6a236;--violet:#6951bd;--cyan:#38aebe;--green:#2e926d;--amber:#c57b1a}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#d8d3ca;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}body{display:grid;place-items:start center;padding:30px}.poster{position:relative;width:800px;height:2000px;overflow:hidden;background:var(--paper);box-shadow:0 28px 90px rgba(30,28,34,.25)}.canvas{position:absolute;inset:0;width:800px;height:2000px;overflow:hidden;background:var(--paper) url("assets/feishu-cover-market-memory.webp") center/cover no-repeat;isolation:isolate}.canvas:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(250,247,239,.67) 0%,rgba(250,247,239,.32) 35%,rgba(247,242,231,.38) 58%,rgba(247,242,231,.76) 75%,rgba(247,242,231,.93) 100%)}.canvas:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(247,242,231,.32),transparent 32% 68%,rgba(247,242,231,.25))}
+    .masthead{position:absolute;left:48px;right:48px;top:43px}.identity{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:900;letter-spacing:.16em}.identity .rule{flex:0 0 118px;height:3px;margin-right:auto;margin-left:13px;background:var(--gold)}.identity .folio{color:var(--muted);font-weight:750;letter-spacing:.1em}.title{max-width:720px;margin:31px 0 0;font:700 72px/.98 Georgia,"Songti SC","Times New Roman",serif;letter-spacing:-.055em}.title .gold{color:var(--gold)}.title .violet{color:var(--violet)}.hook{margin:14px 0 0;color:var(--violet);font-size:23px;font-weight:900;letter-spacing:.055em}.dek{max-width:650px;margin:17px 0 0;font-size:17px;font-weight:560;line-height:1.62}
+    .chapter{position:absolute;max-width:272px}.chapter .num{display:block;margin-bottom:7px;color:var(--violet);font:italic 700 13px/1 Georgia,serif;letter-spacing:.12em}.chapter h2{margin:0;font:700 25px/1.16 Georgia,"Songti SC","Times New Roman",serif}.chapter p{margin:9px 0 0;color:#554f50;font-size:11.5px;line-height:1.58}.chapter .tech{display:inline-block;margin-top:9px;padding:5px 8px;border:1px solid rgba(105,81,189,.2);border-radius:99px;background:rgba(251,248,240,.72);color:var(--violet);font-size:8.5px;font-weight:850;letter-spacing:.055em}.origin{left:48px;top:378px}.memory{right:43px;top:666px}.geometry{left:43px;top:895px}.geometry .equation{margin-top:11px;padding:8px 10px;border-left:3px solid var(--green);background:rgba(251,248,240,.72);font:italic 10px/1.5 Georgia,serif}
+    .sequence-note{position:absolute;left:48px;top:534px;width:245px;display:grid;gap:7px}.sequence-note div{padding:8px 11px;border-radius:10px;background:rgba(251,248,240,.76);font-size:9.5px;box-shadow:0 8px 20px rgba(46,39,48,.06)}.sequence-note b{color:var(--amber)}
+    .result{position:absolute;left:46px;right:46px;top:1190px;padding:23px 24px 20px;border-radius:23px;background:rgba(251,248,240,.96);box-shadow:0 25px 68px rgba(47,38,52,.14);backdrop-filter:blur(16px)}.section-label{font-size:10px;font-weight:900;letter-spacing:.13em;color:var(--violet)}.result-grid{display:grid;grid-template-columns:190px 1fr;gap:28px;margin-top:12px;align-items:center}.main-number strong{display:block;font:700 58px/1 Georgia,"Times New Roman",serif}.main-number>span{display:block;margin-top:7px;color:var(--muted);font-size:10px;font-weight:750}.improvements{display:flex;gap:16px;margin-top:18px}.improvements b{display:block;font-size:23px;color:var(--green)}.improvements div:nth-child(2) b{color:var(--violet)}.improvements small{color:var(--muted);font-size:8px}.rankings{display:grid;gap:6px}.rank{display:grid;grid-template-columns:105px 1fr 38px;gap:7px;align-items:center;font-size:9px}.track{height:13px;border-radius:99px;background:#ddd7cc;overflow:hidden}.track i{display:block;height:100%;background:#9d978e}.rank.q .track i{background:var(--gold)}.rank.c .track i{background:var(--cyan)}.rank span:last-child{text-align:right;font-weight:800}.margin-note{margin:16px 0 0;padding:9px 11px;border:1px solid rgba(197,123,26,.48);border-radius:9px;background:rgba(197,123,26,.07);font-size:9.5px;line-height:1.5}.margin-note strong{color:#8d5511}
+    .hardware{position:absolute;left:48px;right:48px;top:1518px;display:grid;grid-template-columns:1.12fr .88fr;gap:28px;align-items:end}.hardware h2{margin:6px 0 0;font:700 40px/1.02 Georgia,"Times New Roman",serif}.hardware h2 em{color:var(--gold);font-style:normal}.hardware p{margin:11px 0 0;color:#514c4c;font-size:10.5px;line-height:1.55}.measurements{height:108px;display:flex;gap:9px;align-items:end;padding:12px 13px 20px;border-radius:17px;background:rgba(251,248,240,.82);backdrop-filter:blur(12px)}.measurements div{position:relative;flex:1;display:flex;align-items:end;justify-content:center;height:100%}.measurements i{display:block;width:31px;border-radius:5px 5px 0 0;background:linear-gradient(var(--cyan),var(--violet))}.measurements span{position:absolute;bottom:-15px;color:var(--muted);font-size:8px}.scope{position:absolute;left:48px;right:48px;top:1683px;padding:9px 13px;border-radius:9px;background:rgba(23,32,42,.91);color:var(--paper2);font-size:9.5px;line-height:1.45}
+    .authors{position:absolute;left:48px;right:48px;top:1750px}.author-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.author{margin:0;text-align:center}.author img{width:100%;aspect-ratio:1;display:block;object-fit:cover;border:1px solid rgba(255,255,255,.75);border-radius:14px 14px 32px 14px;box-shadow:0 10px 26px rgba(44,36,48,.12)}.author figcaption{margin-top:5px;font-size:9.5px;font-weight:850}.author small{display:block;color:var(--muted);font-size:6.5px;text-transform:uppercase}.footer{display:flex;justify-content:space-between;align-items:end;margin-top:12px;color:#665f5c;font-size:7.5px}.links{display:flex;gap:7px}.links a{padding:5px 8px;border:1px solid rgba(105,81,189,.23);border-radius:99px;background:rgba(255,255,255,.68);color:var(--violet);font-weight:850;text-decoration:none}
+    .hardware h2{font-size:31px;line-height:1.04}.hardware p{margin-top:7px;font-size:9.5px;line-height:1.35}.scope{top:1720px}.authors{top:1765px}
+    @media(max-width:840px){body{padding:0}.poster{width:100vw;height:auto;aspect-ratio:2/5;box-shadow:none}.canvas{transform:scale(calc(100vw / 800));transform-origin:top left}}
+    @media print{@page{size:800mm 2000mm;margin:0}html,body{width:800mm;height:2000mm;background:none}body{display:block;padding:0}.poster{width:800mm;height:2000mm;box-shadow:none}.canvas{transform:scale(3.779527559);transform-origin:top left}}
+  </style>
+</head>
+<body>
+  <main class="poster" aria-label="Quantum Alpha 飞书文档封面式决赛海报"><div class="canvas">
+    <header class="masthead">
+      <div class="identity"><span>QUANTUM ALPHA</span><i class="rule"></i><span class="folio">FIELD NOTE · DEECAMP 2026</span></div>
+      <h1 class="title">让<span class="gold">市场路径</span><br>进入<span class="violet">量子记忆</span></h1>
+      <p class="hook">THE MARKET REMEMBERS</p>
+      <p class="dek">我们不只让模型看到市场发生了什么，还让它记住市场是如何走到今天的。</p>
+    </header>
+
+    <section class="chapter origin"><span class="num">01 / ORIGIN</span><h2>市场不是一张静止的表</h2><p>同样的涨跌幅，以不同顺序发生，可能意味着完全不同的下一步风险。真正携带信息的，是状态如何一步步形成。</p><span class="tech">FIVE-DAY CAUSAL PATH</span></section>
+    <div class="sequence-note" aria-label="事件顺序示例"><div><b>平静 → 冲击 → 修复</b>　风险在释放后回落</div><div><b>平静 → 修复 → 冲击</b>　相似统计，未来可能不同</div></div>
+    <section class="chapter memory"><span class="num">02 / MEMORY</span><h2>事件顺序进入量子动力学本身</h2><p>有序生成元驱动四个系统比特与快慢记忆辅助比特共同演化；交换事件顺序会改变最终混合态轨迹。</p><span class="tech">NON-COMMUTING MIXED-STATE TRAJECTORY</span></section>
+    <section class="chapter geometry"><span class="num">03 / GEOMETRY</span><h2>训练沿量子态真正可区分的方向发生</h2><p>mixed-state SLD-QFI 描述局部可辨识方向；Q-TRACE 把历史重要方向写成持续学习约束。</p><div class="equation">(F + λI) Δθ + Cν = −g<br>CᵀΔθ = 0</div><span class="tech">QFI · QNG · Q-TRACE</span></section>
+
+    <section class="result" aria-labelledby="result-title">
+      <div class="section-label" id="result-title">RESULT FIRST · FROZEN DEVELOPMENT PILOT</div>
+      <div class="result-grid">
+        <div class="main-number"><strong>0.8327</strong><span>Q-ECHO-V QLIKE · 越低越好</span><div class="improvements"><div><b>-8.4%</b><small>vs. HAR-RV</small></div><div><b>-25.5%</b><small>vs. QLSTM</small></div></div></div>
+        <div class="rankings" aria-label="统一 QLIKE 比较">
+          <div class="rank c"><span>Commuting</span><div class="track"><i style="width:72%"></i></div><span>0.8284</span></div>
+          <div class="rank q"><span>Q-ECHO-V</span><div class="track"><i style="width:74%"></i></div><span>0.8327</span></div>
+          <div class="rank"><span>Product</span><div class="track"><i style="width:75%"></i></div><span>0.8335</span></div>
+          <div class="rank"><span>Volterra–Lie</span><div class="track"><i style="width:78%"></i></div><span>0.8394</span></div>
+          <div class="rank"><span>HAR-RV</span><div class="track"><i style="width:89%"></i></div><span>0.9091</span></div>
+          <div class="rank"><span>QLSTM</span><div class="track"><i style="width:100%"></i></div><span>1.1181</span></div>
+        </div>
+      </div>
+      <p class="margin-note"><strong>研究手记：</strong>matched commuting control 比 Q-ECHO-V 低 0.53%；9 个单元中 7/9 选择零量子层。当前结果支持局部预测竞争力，但不是严格量子特异性证明。</p>
+    </section>
+
+    <section class="hardware" aria-labelledby="hardware-title">
+      <div><div class="section-label">04 / FROM MEMORY TO MATTER</div><h2 id="hardware-title">从量子预测器走到真实 NISQ 平台<br><em>4096</em> REAL QPU SHOTS</h2><p>Quafu Baihua · 8 qubits · 2 frozen layers<br>24 frozen parameters · 4 verified tasks</p></div>
+      <div class="measurements" aria-label="四个系统 Z 期望值"><div><i style="height:98%"></i><span>0.405</span></div><div><i style="height:88%"></i><span>0.361</span></div><div><i style="height:42%"></i><span>0.171</span></div><div><i style="height:100%"></i><span>0.411</span></div></div>
+    </section>
+    <div class="scope"><strong>HARDWARE SCOPE</strong>　单个最新时间步、双冻结层的冻结单步测量；不是端到端五步预测，也未在 QPU 上训练。</div>
+
+    <section class="authors" aria-label="团队介绍">
+      <div class="author-grid">
+        <figure class="author"><img src="assets/portrait-zhang-hongfei-v2.png" alt="张鸿飞"><figcaption>张鸿飞<small>Participant</small></figcaption></figure>
+        <figure class="author"><img src="assets/portrait-wu-zhenan-v2.png" alt="吴哲楠"><figcaption>吴哲楠<small>Participant</small></figcaption></figure>
+        <figure class="author"><img src="assets/portrait-fang-yice-v2.png" alt="方一策"><figcaption>方一策<small>Participant</small></figcaption></figure>
+        <figure class="author"><img src="assets/portrait-wang-junkai-v2.png" alt="王俊凯"><figcaption>王俊凯<small>Participant</small></figcaption></figure>
+        <figure class="author"><img src="assets/portrait-luo-di-v3.png" alt="罗迪"><figcaption>罗迪<small>Advisor</small></figcaption></figure>
+      </div>
+      <div class="footer"><span>Quantum Alpha · DeeCamp 2026 Final · Shanghai</span><span class="links"><a href="https://junkaiwang-theophy.github.io/quantum-alpha-qecho-for-CSI300/demo/">LIVE DEMO</a><a href="https://github.com/JunkaiWang-TheoPhy/quantum-alpha-qecho-for-CSI300">CODE + EVIDENCE</a></span></div>
+    </section>
+  </div></main>
+</body>
+</html>
